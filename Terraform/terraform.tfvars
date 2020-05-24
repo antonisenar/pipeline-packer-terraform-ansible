@@ -18,6 +18,6 @@ vsphere_template_folder = ""
 vsphere_template_name = "centos7"
 
 # Customize
-vsphere_vm_count = "3"
-vsphere_pool = "RKE"
-vsphere_vm_folder = "RKE"
+vsphere_vm_count = "1"
+vsphere_pool = "Jenkins"
+vsphere_vm_folder = "Jenkins"

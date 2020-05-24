@@ -37,7 +37,7 @@ data "vsphere_virtual_machine" "template" {
 resource "vsphere_virtual_machine" "vm" {
   count = var.vsphere_vm_count
 
-  name             = "node-${count.index + 1}"
+  name             = "Jenkins"
   resource_pool_id = data.vsphere_resource_pool.pool.id
   datastore_id     = data.vsphere_datastore.datastore.id
   folder           = var.vsphere_vm_folder
@@ -55,7 +55,7 @@ resource "vsphere_virtual_machine" "vm" {
   }
 
   disk {
-    label = "node-${count.index + 1}-disk"
+    label = "Jenkins-disk"
     size  = 35
   }
 
@@ -66,8 +66,8 @@ resource "vsphere_virtual_machine" "vm" {
       timeout = 0
 
       linux_options {
-        host_name = "node-${count.index + 1}"
-        domain    = "${var.vsphere_host}.local"
+        host_name = "Jenkins"
+        domain    = "senar.local"
       }
 
       network_interface {
