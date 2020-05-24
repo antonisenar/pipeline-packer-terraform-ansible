@@ -1,0 +1,51 @@
+{
+    "builders": [
+      {
+        "type": "vsphere-iso",
+  
+        "vcenter_server":      "192.168.1.245",
+        "username":            "administrator@senar.local",
+        "password":            "Fornarina001.",
+        "insecure_connection": "true",
+        "datacenter":           "Datacenter",
+        "Cluster":              "SENAR",
+        "datastore":            "DatastoreLocalIMAC",
+  
+        "vm_name": "centos7",
+        "host":     "192.168.1.114",
+  
+        "guest_os_type": "centos7_64Guest",
+  
+        "ssh_username": "root",
+        "ssh_password": "server",
+  
+        "CPUs":             2,
+        "RAM":              4096,
+        "RAM_reserve_all": true,
+  
+        "disk_controller_type":  "pvscsi",
+        "disk_size":        32768,
+        "disk_thin_provisioned": true,
+  
+        "network_card": "vmxnet3",
+  
+        "iso_paths": [
+          "[DatastoreLocalIMAC] ISOS/CentOS-7-x86_64-Minimal-2003.iso"
+        ],
+        "floppy_files": ["ks.cfg"],
+        "boot_command": [
+          "<esc><wait>",
+          "linux ks=hd:fd0:/ks.cfg<enter>"
+        ]
+      }
+    ],
+  
+    "provisioners": [
+      {
+        "type": "shell",
+        "inline": [
+          "sudo yum install -y cloud-init"
+        ]
+      }
+    ]
+  }
