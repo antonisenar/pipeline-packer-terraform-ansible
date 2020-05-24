@@ -5,7 +5,7 @@
   
         "vcenter_server":      "192.168.1.245",
         "username":            "administrator@senar.local",
-        "password":            "Fornarina001.",
+        "password":            "Password2020.",
         "insecure_connection": "true",
         "datacenter":           "Datacenter",
         "Cluster":              "SENAR",

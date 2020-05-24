@@ -2,7 +2,7 @@
 # vCenter connection
 vsphere_vcenter = "192.168.1.245"
 vsphere_user = "administrator@senar.local"
-vsphere_password = "Fornarina001."
+vsphere_password = "Password2020."
 vsphere_unverified_ssl = "true"
 
 # Organization
